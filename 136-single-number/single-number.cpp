@@ -6,8 +6,9 @@ public:
             return nums[0];
         }
         int ans=0;
-        for(int i=0;i<nums.size();i++){
-            ans=ans^nums[i];
+        for(auto num: nums){
+        //for(int i=0;i<nums.size();i++){
+            ans=ans^num;
         }
         return ans;
 
