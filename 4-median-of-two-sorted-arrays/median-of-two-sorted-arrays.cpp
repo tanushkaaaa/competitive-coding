@@ -1,32 +1,78 @@
 class Solution {
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
-        int n = nums1.size();
-        int m = nums2.size();
-        int i = 0, j = 0, m1 = 0, m2 = 0;
+        int n1=nums1.size();
+        int n2=nums2.size();
+        int n=(n1+n2);
+        int ele1=-1,ele2=-1;
+        int i=0,j=0;
+        int count=0;
+        while(i<n1 && j<n2){
+            if(nums1[i]<nums2[j]){
+                if(count==(n/2)){
+                    ele1=nums1[i];
 
-        // Find median.
-        for (int count = 0; count <= (n + m) / 2; count++) {
-            m2 = m1;
-            if (i != n && j != m) {
-                if (nums1[i] > nums2[j]) {
-                    m1 = nums2[j++];
-                } else {
-                    m1 = nums1[i++];
                 }
-            } else if (i < n) {
-                m1 = nums1[i++];
-            } else {
-                m1 = nums2[j++];
+                if(count==(n/2-1)){
+                    ele2=nums1[i];
+
+                }
+
+                i++;
+                count++;
             }
+
+            else{
+                if(count==(n/2)){
+                    ele1=nums2[j];
+
+                }
+                if(count==(n/2-1)){
+                    ele2=nums2[j];
+
+                }
+                j++;
+                count++;
+
+            }
+
         }
 
-        // Check if the sum of n and m is odd.
-        if ((n + m) % 2 == 1) {
-            return static_cast<double>(m1);
-        } else {
-            double ans = static_cast<double>(m1) + static_cast<double>(m2);
-            return ans / 2.0;
+        while(i<n1){
+                if(count==(n/2)){
+                    ele1=nums1[i];
+
+                }
+                if(count==(n/2-1)){
+                    ele2=nums1[i];
+
+                }
+
+                i++;
+                count++;
+
         }
+
+        while(j<n2){
+                if(count==(n/2)){
+                    ele1=nums2[j];
+
+                }
+                if(count==(n/2-1)){
+                    ele2=nums2[j];
+
+                }
+                j++;
+                count++;
+           
+
+        }
+        if(n%2==1){
+            return double(ele1);
+        }
+        else{
+            return (double(ele1)+double(ele2))/2.0;
+        }
+
     }
 };
