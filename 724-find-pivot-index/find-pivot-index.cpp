@@ -1,4 +1,3 @@
-// Time Complexity : O(n)
 class Solution {
 public:
     int pivotIndex(vector<int>& nums) {
