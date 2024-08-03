@@ -1,14 +1,23 @@
 class Solution {
 public:
     bool canBeEqual(vector<int>& target, vector<int>& arr) {
-         vector<int> cnt1(1001);
-        vector<int> cnt2(1001);
-        for (int& v : target) {
-            ++cnt1[v];
+        unordered_map<int, int> arrFreq;
+        for (int num : arr) {
+            arrFreq[num]++;
         }
-        for (int& v : arr) {
-            ++cnt2[v];
+        unordered_map<int, int> targetFreq;
+        for (int num : target) {
+            targetFreq[num]++;
         }
-        return cnt1 == cnt2;
+        if (arrFreq.size() != targetFreq.size()) {
+            return false;
+        }
+        for (auto it : arrFreq) {
+            if (targetFreq[it.first] != it.second) {
+                return false;
+            }
+        }
+
+        return true;
     }
 };
