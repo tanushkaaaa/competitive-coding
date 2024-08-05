@@ -22,7 +22,6 @@ public:
             for(int i=1;i<=l;i++){
                 TreeNode* temp=q.front();
                 q.pop();
-
                 if(i==l) output.push_back(temp->val);
                 if(temp->left) q.push(temp->left);
                 if(temp->right) q.push(temp->right);
