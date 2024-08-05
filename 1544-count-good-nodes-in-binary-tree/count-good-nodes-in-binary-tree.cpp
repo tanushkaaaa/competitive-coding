@@ -19,8 +19,9 @@ public:
     void good(TreeNode* root, int m){
         if(root==NULL) return;
         if(root->val>=m) {c++;
-        m=root->val;
+        
         }
+        m=max(m,root->val);
         good(root->left,m);
         good(root->right,m);
     }
