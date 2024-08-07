@@ -7,7 +7,7 @@ public:
     
     int sumRange(int left, int right) {
         int sum=0;
-        while(left<=right){
+        for(int i=left;i<=right;i++){
             sum+=nums[left];
             left++;
         }
