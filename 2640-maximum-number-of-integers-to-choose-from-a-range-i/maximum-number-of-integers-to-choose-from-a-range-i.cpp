@@ -11,9 +11,8 @@ public:
                 sum+=i;
                 if(sum<=maxSum){
                     c++;
-                }else {
-                    return c;
-                }
+                }else break;
+                
             }
         }
         return c;
