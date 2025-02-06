@@ -16,7 +16,7 @@ public:
     }
 
     vector<vector<int>> combinationSum3(int k, int n) {
-        res.clear();
+        //res.clear();
         vector<int> temp;
         backT(1, temp, k, n);
         return res;
