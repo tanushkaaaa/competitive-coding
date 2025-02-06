@@ -13,7 +13,7 @@ public:
             temp.pop_back();
     }
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
-         //res.clear();
+         res.clear();
         vector<int>temp;
         backTrack(0,candidates,temp,target);
         return res;
