@@ -2,10 +2,10 @@ class Solution {
 public:
 
     void solve(int i,vector<int>& nums, vector<int>&temp,vector<vector<int>>&res){
-        if(i==nums.size()) {
-            res.push_back(temp);
-            return;
-        }
+        // if(i==nums.size()) {
+        //     res.push_back(temp);
+        //     return;
+        // }
         res.push_back(temp);
         for(int j=i;j<nums.size();j++){
         temp.push_back(nums[j]);
