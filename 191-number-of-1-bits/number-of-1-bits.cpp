@@ -6,7 +6,7 @@ public:
         res+=(n%2==0)?'0':'1';
         n=n/2;
         }
-        reverse(res.begin(),res.end());
+       // reverse(res.begin(),res.end());
         int c=0;
         for(int i=0;i<res.length();i++){
             if(res[i]=='1') c++;
