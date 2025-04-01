@@ -2,6 +2,7 @@ class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& mat) {
         int n=mat.size();
+        if(n==0) return {};
         int m=mat[0].size();
         int top=0,right=m-1;
         int bottom=n-1, left=0;
