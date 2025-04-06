@@ -18,6 +18,6 @@ public:
                 a.push_back(stoi(op));
             }
         } 
-        return accumulate(a.begin(), a.end(), 0);
+        return accumulate(a.begin(), a.end(),0);
     }
 };
