@@ -6,12 +6,12 @@ public:
         int i=0,j=0,c=0;
         while(i<g.size() && j<s.size()){
             if(s[j]>=g[i]){
-               // c++;
+                c++;
                 i++;
-                //j++;
+                j++;
             }
-         j++;
+         else j++;
         }
-        return i;
+        return c;
     }
 };
